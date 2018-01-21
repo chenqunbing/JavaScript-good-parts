@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			Array.method('push',function(){
+				this.splice.apply(
+					this,
+					[this.length,0].concat(Array.prototype.slice.apply(arguments));
+					return this.length;
+				)
+			})
+			
+			Array.method('unshift',function(){
+				this.splice.apply(
+					this,
+					[0,0].concat(Array.prototype.slice.apply(arguments));
+					return this.length;
+				)
+			})
+		</script>
+	</body>
+</html>

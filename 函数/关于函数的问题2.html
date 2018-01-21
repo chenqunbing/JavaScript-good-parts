@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//关于函数的闭包问题
+			for(var i=0;i<5;i++){
+				console.log(i);
+			}
+			
+			for(var i=0;i<5;i++){
+				document.body.onclick=function(){
+					console.log(i);
+				}
+			}
+			
+			for(var i=0;i<5;i++){
+				var helper=function(i){
+					return function(e){
+						console.log(i);
+					}
+				}
+				document.onclick=helper(i);
+			}
+			
+		</script>
+	</body>
+</html>
